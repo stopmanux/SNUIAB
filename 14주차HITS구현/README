@@ -4,3 +4,9 @@
 
 첨부된 노트북(.ipynb) 파일에서 iterate_HITS 함수를 구현하고 small 데이터셋에서 실행한 후
 hub, authority score top-5 결과를 hub.csv, auth.csv에 출력한다.
+
+내가 맞게 풀었는지는 모르겠는데 걸러서 코딩해라.
+
+조교가 말하기를, 
+제공된 compute_exact_HITS 함수에서 부호를 양수로 조정하는 과정이 없어 iterative 하게 구한 값과 부호가 달라 오차가 큰 것으로 나오는데
+제출할 때는 양수로 내도 상관없다고 했다.
