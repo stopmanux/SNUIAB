@@ -6,4 +6,4 @@ RNN 자연어처리, BERT 모델 ipynb를 잘 살펴보시어 문제를 해결�
 다음 학기에는 바뀔 수 있습니다.
 
 2020년 IAB Challenge 2와 동일합니다.
-다른 학기에는 작년과 같이 behavior cloning으로 구성될 수 있습니다.
+다른 학기에는 behavior cloning으로 구성될 수 있습니다.
