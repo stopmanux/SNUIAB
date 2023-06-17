@@ -1,0 +1,5 @@
+BOW 과제로 SVM분류기 만드는거다.
+
+과제 관련 사항
+BOW 분류기 특성상 prediction 결과 dragonfly 가 반드시 나와야할 필요는 없다.
+classify 하는 과정 (dense sift 등의 함수를 적절히 사용하여 classifier로 predict하는 코드) 만 잘 작성하면 된다.
