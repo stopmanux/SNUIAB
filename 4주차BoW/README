@@ -4,5 +4,3 @@ BOW 과제로 SVM분류기 만드는거다.
 조교가 말하기를,
 BOW 분류기 특성상 prediction 결과 dragonfly 가 반드시 나와야할 필요는 없고,
 classify 하는 과정 (dense sift 등의 함수를 적절히 사용하여 classifier로 predict하는 코드) 만 잘 작성하면 된다.
-
-혹시나 해서 homework에 추가로 다른 예시용 사진을 하나 더 테스트 해봤으니 참고.
