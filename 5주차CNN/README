@@ -1,3 +1,42 @@
 CNN이다. 가장 중요하고 챌린지 1에서 나오는 부분이다.
 
 분류기의 정확성을 미친듯이 올릴 방법(VGG16 VGG19 RESNET)을 미리 여기서 스켈레톤 코드로 구성하는 연습을 미리 해 놓는 것이 챌린지 1을 해결하는데 큰 도움이 된다.
+
+임의로 학습 횟수를 늘렸다.
+
+이것은 끔찍하다.
+
+조교의 스켈레톤 코드에 문제가 있으니 아래 Q&A를 참고바란다.
+
+1.
+
+업로드해주신 01&02_[COLAB]_DataLoader_&_Conv_Neural_Net_PyTorch.ipynb.ipynb 파일에서,
+
+코드를 실행시켰을 때 첨부한 사진과 같이 에러메시지가 뜨는데 어떻게 수정해야 해결되는지 여쭤보고싶습니다.
+
+2.
+
+CNN 모델을 정의하는 부분에서 아래처럼 channel 값을 넣는 함수가 있는데, 
+
+# 1 input image channel, 6 output channels, 3x3 square convolution
+
+        self.conv1 = nn.Conv2d(1, 6, 3, stride=1, padding=1)  # yes, zero padding. 
+
+input이 1인 것은 흑백사진이라 1개의 channel이 있는 것으로 이해했습니다만, output channel의 의미가 무엇인지 잘 이해하지 못해서 혹시 간략하게 설명해주실 수 있는지 여쭤보고 싶습니다.
+
+또한 그 아래에    # self.fc = nn.Linear(인풋 숫자 , 아웃풋 숫자 )
+
+에서 Linear 함수의 역할, 각주에 써 있는 인풋, 아웃풋의 의미 등도 여쭤봅니다.
+
+감사합니다.
+
+
+A.
+
+01&02 파일 초반부에 python 3.7 버전으로 바꾸고, 현재 버전을 출력하는 코드가 있습니다. 혹시 거기서 python version 출력했을 때 3.7이 나오나요?
+
+output channel 수는 number of filters라고 보시면 됩니다. (수업 pdf 25page) 즉, output channel=6은 cnn filter 수를 6개를 두어 output의 shape이 W x H x 6이 되게 하기 위함입니다. filter 수를 많이 둠으로써 더 많은 정보를 저장하게 하기 위함입니다.
+
+input 숫자는 이제 conv => pool layer를 거쳐서 나온 총 크기가 되겠습니다. fc (fully-connected) layer는 모든 값을 1-dim으로 펼쳐져서 받기 때문에, conv => pool layer를 거쳐서 나온 데이터가 (channel, W, H)의 shape을 갖고 있다면, 이를 다 이어준 channel * W * H의 크기로 input을 받게 됩니다. 따라서 여기선 14*14*6이 되겠습니다.
+
+output 숫자는 class 수가 됩니다. 따라서 10이 됩니다.
